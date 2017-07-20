@@ -2,7 +2,13 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ImageService{
-    
+    vidibleImages = [];
+    getImages(){
+        return this.vidibleImages = IMAGES.slice(0);
+    }
+    getImage(id:number){
+        return IMAGES.slice(0).find(image => image.id == id);
+    }    
 }
 
 const IMAGES = [
@@ -15,7 +21,7 @@ const IMAGES = [
     {"id" : 7, "category" : "movies", "caption" : "Do you like our owl?", "url" : "assets/img/7.png"},
     {"id" : 8, "category" : "movies", "caption" : "I like working with you.", "url" : "assets/img/8.png"},
     {"id" : 9, "category" : "movies", "caption" : "Im lesbian with you.", "url" : "assets/img/9.png"},
-    {"id" : 10, "category" : "science", "caption" : "Old Sagan was better.", "url" : "assets/img/10.png"},
+    {"id" : 10, "category" : "science", "caption" : "Old1 Sagan was better.", "url" : "assets/img/10.png"},
     {"id" : 11, "category" : "science", "caption" : "Are you joking Mr.Feynman", "url" : "assets/img/11.png"},
     {"id" : 12, "category" : "science", "caption" : "Science is great and fuck off!", "url" : "assets/img/12.png"},
     {"id" : 13, "category" : "science", "caption" : "Obviously, Johny Walker Red", "url" : "assets/img/13.png"},

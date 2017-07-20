@@ -1,1 +1,13 @@
 <h2>{{title}}</h2>
+<div class="row">
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='all'" (click)="filterBy='all'">All</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='philosophy'" (click)="filterBy='philosophy'">Philosophy</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='movies'" (click)="filterBy='movies'">Movies</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='science'" (click)="filterBy='science'">Science</button>
+    <button class="btn btn-lg btn-info" [class.active]="filterBy=='retardedHorse'" (click)="filterBy='retardedHorse'">Retarded Horse</button>
+    <ul id="thumbnailsList">
+        <li *ngFor="let image of (visibleImages | imageFilter:filterBy)" >
+            <img src="{{image.url}}" alt="Image" class="tn" width="200" height="160">
+        </li>
+    </ul>
+</div>
